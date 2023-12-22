@@ -1,11 +1,12 @@
 package menu_game;
 
+import DAO.GameDAO;
 import DAO.UserDAO;
 import Util.Util;
 import _Game.GameCommand;
 
 public class GameLogin implements GameCommand {
-//	private GameController gCon;
+	GameDAO gameDAO = new GameDAO();
 
 	public GameLogin() {
 		init();
@@ -13,7 +14,6 @@ public class GameLogin implements GameCommand {
 
 	@Override
 	public void init() {
-//		gCon = GameController.getInstance();
 	}
 
 	@Override
@@ -33,6 +33,15 @@ public class GameLogin implements GameCommand {
 		}
 		System.out.println("로그인 완료");
 		System.out.printf("닉네임 : %s %n", UserDAO.getuList().get(idIdx).getNickName());
+		System.out.println("---------------------------------");
+		GameDAO.nextStage = "TITLE";
+		boolean run = true;
+		while (true) {
+			run = gameDAO.changeStage();
+			if (run == false) {
+				break;
+			}
+		}
 		return false;
 	}
 }

@@ -18,7 +18,6 @@ public class _MainGame implements GameCommand {
 
 	@Override
 	public boolean update() {
-//		System.out.println("=== 메이플 스토리 ===");
 		System.out.println("=== Game ===");
 		System.out.println("[1] 회원가입");
 		System.out.println("[2] 로그인");
