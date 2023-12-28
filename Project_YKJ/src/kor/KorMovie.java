@@ -7,7 +7,7 @@ import _Main.MovieGameMain;
 
 public class KorMovie {
 
-	Scanner sc = new Scanner(System.in);
+	Scanner scan = new Scanner(System.in);
 
 	public void showKor() {
 //		극한직업 실미도 왕의남자 청년경찰 해운대 엽기적인그녀 암살
@@ -42,7 +42,7 @@ public class KorMovie {
 		}
 		while (true) {
 			System.out.print("입력 : ");
-			String title = this.sc.nextLine();
+			String title = this.scan.nextLine();
 			cnt += 1;
 			switch (title) {
 			case "극한직업":
@@ -93,7 +93,7 @@ public class KorMovie {
 
 	public void more() {
 		System.out.println("게임을 더 하시겠습니까? (Y/N)");
-		String answer = sc.nextLine();
+		String answer = scan.nextLine();
 		MovieGameMain.finish = answer.equals("y") || answer.equals("Y") ? false : true;
 	}
 }
